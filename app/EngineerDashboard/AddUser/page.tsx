@@ -1,5 +1,5 @@
 import Sidebar from "@/components/DashboardParts/Sidebar";
-import Datacollage from "@/components/Datacollage/Datacollage";
+import SuccessfulMessage from "@/components/SuccessfulMessage";
 
 export default function page() {
     return (
@@ -17,7 +17,7 @@ export default function page() {
                 justifyContent: "center",
                 alignItems: "center",
             }}>
-                <Datacollage />
+                <SignUp />
             </div>
         </>
     )

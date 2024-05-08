@@ -1,17 +1,17 @@
 "use client";
 import { useState } from "react";
 import Style from "./SignUp.module.css";
+import Image from "next/image";
+import Logo from "../../public/logo.png";
 import { useRouter } from "next/navigation";
 import api from "@/components/API/api";
-import Successful from "@/components/Successful/Successful";
-
+import Link from "next/link";
 let Message;
 export default function SignUp() {
 
   const router = useRouter();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     username: "",
@@ -33,29 +33,19 @@ export default function SignUp() {
     try {
       setLoading(true);
       setError(false);
-      const token = localStorage.getItem("Token");
       const response = await api.post(`/Auth/registerwithRole?role=${formData.role}`, {
         fullName: formData.fullName,
         username: formData.username,
         email: formData.email,
         password: formData.password,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+      });
       console.log(response.data);
       setLoading(false);
       if (response.data.success === false) {
         setError(true);
         return;
       }
-      setDone(true);
-      setTimeout(() => {
-        setDone(false);
-      }, 2500);
+      router.push("/AdminDashboard/AddUser/Successfull");
     } catch (error) {
       Message = error.response.data;
       console.log(error.response.data);
@@ -184,17 +174,6 @@ export default function SignUp() {
         </form>
       </div>
       {error && <p className={Style.error}>{Message}</p>}
-      {done && <Successful />}
     </>
   );
 }
-
-import Successful from "@/components/Successful/Successful";
-
-const [done, setDone] = useState(false);setDone(true);
-setDone(true);
-      setTimeout(() => {
-        setDone(false);
-      }, 2500);
-      
-{done && <Successful />}

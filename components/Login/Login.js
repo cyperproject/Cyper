@@ -4,14 +4,12 @@ import { useRouter } from "next/navigation";
 import api from "@/components/API/api";
 import "./loginStyles.css";
 import Link from "next/link";
-import Successful from "@/components/Successful/Successful";
 
 let Message;
 export default function Login() {
   const router = useRouter();
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
-  const [done, setDone] = useState(false);setDone(true);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -32,10 +30,6 @@ export default function Login() {
         setError(true);
         return;
       }
-      setDone(true);
-      setTimeout(() => {
-        setDone(false);
-      }, 2500);
       localStorage.setItem('Token', response.data.Token);
       response.data.Roles[0]==="Admin"?router.push("/AdminDashboard"):response.data.Roles[0]==="User"?router.push("/UserDashboard"):router.push("/EngineerDashboard");
       setLoading(false);
@@ -82,8 +76,6 @@ export default function Login() {
           </Link>
         </div>
       </form>
-      
-{done && <Successful />}
     </div>
   );
 }

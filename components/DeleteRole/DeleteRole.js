@@ -3,15 +3,13 @@ import { useState } from "react";
 import Style from "./DeleteRole.module.css";
 import { useRouter } from "next/navigation";
 import api from "@/components/API/api";
-import Successful from "@/components/Successful/Successful";
-
+import Link from "next/link";
 let Message;
-export default function DeleteRole() {
+export default function SignUp() {
 
   const router = useRouter();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);
   const [formData, setFormData] = useState({
     UserNameOrID: "",
     RoleName: "",
@@ -40,10 +38,7 @@ export default function DeleteRole() {
         setError(true);
         return;
       }
-      setDone(true);
-      setTimeout(() => {
-        setDone(false);
-      }, 2500);
+      router.push("/AdminDashboard/DeleteRoles/Successfull");
       setLoading(false);
     } catch (error) {
       Message = "User not existed";
@@ -128,7 +123,6 @@ export default function DeleteRole() {
         </form>
       </div>
       {error && <p className={Style.error}>{Message}</p>}
-      {done && <Successful />}
     </>
   );
 }

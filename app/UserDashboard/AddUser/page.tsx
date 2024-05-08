@@ -1,10 +1,10 @@
-import Sidebar from "@/components/DashboardParts/Sidebar";
-import Datacollage from "@/components/Datacollage/Datacollage";
+import UserSidebar from "@/components/DashboardParts/UserSidebar";
+import SuccessfulMessage from "@/components/SuccessfulMessage";
 
 export default function page() {
     return (
         <>
-            <Sidebar />
+            <UserSidebar />
             <div style={{
                 width: "calc(100% - 240px)",
                 height: "100%",
@@ -17,7 +17,7 @@ export default function page() {
                 justifyContent: "center",
                 alignItems: "center",
             }}>
-                <Datacollage />
+                <SignUp />
             </div>
         </>
     )

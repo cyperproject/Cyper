@@ -22,39 +22,40 @@ const Sidebar = () => {
                 <div className="menu">
                     <ul className="menu-link">
                         <li className="nav-link">
-                            <a href="/UserDashboard">
+                            <a>
                                 <i className="icon"><BiHome /></i>
-                                <span className="text nav-text">DataCollage</span>
+                                <span className="text nav-text">Dashboard</span>
                             </a>
-                        </li>
-                        <li className="dropdown-container">
-                            <a className="hover-dropdown-button">
-                                <i className="icon"><BiHome /></i>
-                                <span className="text nav-text">Data</span>
-                            </a>
-                            <div className="dropdown-menu">
-                                <a href="/UserDashboard/AddData" className="p-item">Add Data</a>
-                                <a href="/UserDashboard/EditeData" className="p-item">Edite Data</a>
-                                <a href="/UserDashboard/DeleteData" className="p-item">Delete Data</a>
-                            </div>
-                        </li>
-                        <li className="dropdown-container">
-                            <a className="hover-dropdown-button">
-                                <i className="icon"><BiHome /></i>
-                                <span className="text nav-text">Problem</span>
-                            </a>
-                            <div className="dropdown-menu">
-                                <a href="/UserDashboard/AllProblem" className="p-item">All Problem</a>
-                                <a href="/UserDashboard/AddProblem" className="p-item">Add Problem</a>
-                                <a href="/UserDashboard/EditeProblem" className="p-item">Edite Problem</a>
-                                <a href="/UserDashboard/DeleteProblem" className="p-item">Delete Problem</a>
-                            </div>
                         </li>
                         <li className="nav-link">
-                            <a href="/UserDashboard/SolvedProblem">
+                            <a href="/AdminDashboard/AddUser">
                                 <i className="icon"><BiHome /></i>
-                                <span className="text nav-text">Problem Solved</span>
+                                <span className="text nav-text">Add user</span>
                             </a>
+                        </li>
+                        <li className="nav-link">
+                            <a href="/AdminDashboard/ChangeRoles">
+                                <i className="icon"><BiHome /></i>
+                                <span className="text nav-text">Change Role</span>
+                            </a>
+                        </li>
+                        <li className="nav-link">
+                            <a href="/AdminDashboard/DeleteRoles">
+                                <i className="icon"><BiHome /></i>
+                                <span className="text nav-text">Delete Role</span>
+                            </a>
+                        </li>
+                        {/*  */}
+                        <li className="dropdown-container">
+                            <a className="hover-dropdown-button">
+                                <i className="icon"><BiHome /></i>
+                                <span className="text nav-text">CollageData</span>
+                            </a>
+                            <div className="dropdown-menu">
+                                <a href="" className="p-item">Option 1</a>
+                                <a href="" className="p-item">Option 2</a>
+                                <a href="" className="p-item">Option 3</a>
+                            </div>
                         </li>
                         {/* Add more list items for navigation links */}
                     </ul>

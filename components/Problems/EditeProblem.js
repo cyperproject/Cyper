@@ -9,7 +9,7 @@ export default function EditeProblem() {
   const router = useRouter();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);setDone(true);
+  const [done, setDone] = useState(false);
   const [formData, setFormData] = useState({
     id:"",
     desc:"",

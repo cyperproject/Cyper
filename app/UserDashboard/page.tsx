@@ -7,7 +7,7 @@ export default function page() {
             <UserSidebar />
             <div style={{
                 width: "calc(100% - 240px)",
-                height: "100%",
+                height: "100vh",
                 position: "absolute",
                 left: "240px",
                 padding: "0px",

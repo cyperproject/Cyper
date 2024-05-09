@@ -1,13 +1,13 @@
-import Sidebar from "@/components/DashboardParts/Sidebar";
-import Datacollage from "@/components/Datacollage/Datacollage";
+import EngineerSidebar from "@/components/DashboardParts/EngineerSidebar";
+import AllProblem from "@/components/Solves/AllProblem";
 
 export default function page() {
     return (
         <>
-            <Sidebar />
+            <EngineerSidebar />
             <div style={{
                 width: "calc(100% - 240px)",
-                height: "100%",
+                height: "100vh",
                 position: "absolute",
                 left: "240px",
                 padding: "0px",
@@ -17,7 +17,7 @@ export default function page() {
                 justifyContent: "center",
                 alignItems: "center",
             }}>
-                <Datacollage />
+                <AllProblem />
             </div>
         </>
     )

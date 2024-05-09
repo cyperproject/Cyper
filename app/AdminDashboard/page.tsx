@@ -1,5 +1,4 @@
 import AdminSidebar from "@/components/DashboardParts/AdminSidebar";
-import Datacollage from "@/components/Datacollage/Datacollage";
 
 export default function page() {
     return (
@@ -17,7 +16,7 @@ export default function page() {
                 justifyContent: "center",
                 alignItems: "center",
             }}>
-                <Datacollage />
+                
             </div>
         </>
     )

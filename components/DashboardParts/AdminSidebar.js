@@ -21,6 +21,17 @@ const Sidebar = () => {
             <div className="menu-bar">
                 <div className="menu">
                     <ul className="menu-link">
+                        <li className="dropdown-container">
+                            <a className="hover-dropdown-button">
+                                <i className="icon"><BiHome /></i>
+                                <span className="text nav-text">Users</span>
+                            </a>
+                            <div className="dropdown-menu">
+                                <a href="/AdminDashboard/Users/Admins" className="p-item">Admins</a>
+                                <a href="/AdminDashboard/Users/Users" className="p-item">Users</a>
+                                <a href="/AdminDashboard/Users/Engineers" className="p-item">Engineers</a>
+                            </div>
+                        </li>
                         <li className="nav-link">
                             <a href="/AdminDashboard/AddUser">
                                 <i className="icon"><BiHome /></i>
@@ -44,7 +55,7 @@ const Sidebar = () => {
                 </div>
                 <div className="bottom-content">
                     <li className="redhover">
-                        <a href="#">
+                        <a href="/">
                             <i className="icon"><BiLogOut /></i>
                             <span className="text nav-text">Logout</span>
                         </a>

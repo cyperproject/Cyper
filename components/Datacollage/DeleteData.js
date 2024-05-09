@@ -9,7 +9,7 @@ export default function AddData() {
   const router = useRouter();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);setDone(true);
+  const [done, setDone] = useState(false);
   const [id, setId] = useState("");
 
   const handleChange = (event) => {
